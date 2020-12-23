@@ -35,12 +35,12 @@ fig_mel = plot_mel_spectrogram(v_signal, fs, 128)
 
 
 st.title('Voice Verification App')
-st.sidebar.title("Navigation")
+st.sidebar.title("Menu")
 # selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
 col1, col2 = st.beta_columns(2)
 
-uploaded_file = st.file_uploader("Choose a file", type=["mp3", "wav"])    
+uploaded_file = st.file_uploader("Choose a file", type=["mp3", "wav", "m4a"])    
 if uploaded_file is not None:
     file_details = {"FileName":uploaded_file.name,"FileType":uploaded_file.type,"FileSize":uploaded_file.size}
     filename = "{}.{}".format("audio", uploaded_file.name.split(".")[-1])
