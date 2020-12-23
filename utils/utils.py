@@ -13,6 +13,9 @@ def plot_audio(t, v_signal, fs):
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.plot(t, v_signal)
     ax.grid(True)
+    ax.set_title("Audio Waveform")
+    ax.set_xlabel("Time (s)")
+    ax.set_ylabel("Amplitude")
     ax.set_xlim(0, len(v_signal)/fs)
     return fig
 
@@ -21,7 +24,7 @@ def plot_mel_spectrogram(v_signal, fs, n_mels):
     ps = librosa.power_to_db(ps, ref=np.max)
     fig, ax = plt.subplots(figsize=(10, 4))
     librosa.display.specshow(ps, y_axis='mel', x_axis='time', ax=ax, sr=fs)
-    plt.title('Mel-frequency spectrogram')
+    plt.title('Audio Mel-frequency Spectrogram')
     return fig
 
 

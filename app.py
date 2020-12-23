@@ -38,7 +38,7 @@ st.title('Voice Verification App')
 st.sidebar.title("Menu")
 # selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
-col1, col2 = st.beta_columns(2)
+# col1, col2 = st.beta_columns(2)
 
 uploaded_file = st.file_uploader("Choose a file", type=["mp3", "wav", "m4a"])    
 if uploaded_file is not None:
@@ -64,5 +64,5 @@ if uploaded_file is not None:
 
     os.remove(filename)
 
-    col1.pyplot(fig_audio, clear_figure=False)
-    col2.pyplot(fig_mel, clear_figure=False)
+    st.pyplot(fig_audio, clear_figure=False)
+    st.pyplot(fig_mel, clear_figure=False)
