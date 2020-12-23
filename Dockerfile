@@ -15,5 +15,5 @@ RUN pip install -r /requirements.txt
 # RUN sudo apt install ffmpeg
 
 COPY ./ /app
-# Finally, run gunicorn.
-CMD streamlit run app.py
+# Finally, run gunicorn. 
+CMD streamlit run app.py --server.port $PORT
